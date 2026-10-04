@@ -1,28 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        SanPham sp1 = new SanPham("SP01", "Bút bi", 5000, 100);
-        SanPham sp2 = new SanPham("SP02", "Vở 200 trang", 15000, 50);
+        SinhVien sv1 = new SinhVien("Nguyễn Văn An", 2004, "TP.HCM", "SV001", "Công nghệ thông tin", 8.7);
+        SinhVien sv2 = new SinhVien("Trần Thị Bình", 2003, "Đồng Nai", "SV002", "Kế toán", 6.4);
 
-        System.out.println("=== Thông tin ban đầu ===");
-        sp1.hienThiThongTin();
-        sp2.hienThiThongTin();
+        GiangVien gv1 = new GiangVien("Lê Minh Cường", 1980, "Hà Nội", "GV001", "Lập trình Java", 2000000, 3.5);
+        GiangVien gv2 = new GiangVien("Phạm Thu Dung", 1985, "Đà Nẵng", "GV002", "Cơ sở dữ liệu", 2000000, 3.0);
 
-        System.out.println("\n=== Nhập thêm 30 bút bi ===");
-        sp1.nhapHang(30);
-        sp1.hienThiThongTin();
+        sv1.hienThiThongTin();
+        System.out.println();
+        sv2.hienThiThongTin();
+        System.out.println();
+        gv1.hienThiThongTin();
+        System.out.println();
+        gv2.hienThiThongTin();
 
-        System.out.println("\n=== Thử nhập số lượng không hợp lệ (-5) ===");
-        sp1.nhapHang(-5);
-        sp1.hienThiThongTin();
+        System.out.println("\n=== XẾP LOẠI SINH VIÊN ===");
+        System.out.println(sv1.getHoTen() + ": " + sv1.xepLoai());
+        System.out.println(sv2.getHoTen() + ": " + sv2.xepLoai());
 
-        System.out.println("\n=== Bán 20 vở (thành công) ===");
-        boolean kq1 = sp2.banHang(20);
-        System.out.println("Kết quả: " + kq1);
-        sp2.hienThiThongTin();
-
-        System.out.println("\n=== Bán 100 vở (vượt tồn kho) ===");
-        boolean kq2 = sp2.banHang(100);
-        System.out.println("Kết quả: " + kq2);
-        sp2.hienThiThongTin();
+        System.out.println("\n=== LƯƠNG GIẢNG VIÊN ===");
+        System.out.println(gv1.getHoTen() + ": " + String.format("%,.0f", gv1.tinhLuong()));
+        System.out.println(gv2.getHoTen() + ": " + String.format("%,.0f", gv2.tinhLuong()));
     }
 }
